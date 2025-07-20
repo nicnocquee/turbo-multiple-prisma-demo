@@ -21,3 +21,12 @@ EOF
 
 echo "✅ Created .env file in packages/database" 
 cat .env
+
+cd ../../apps/web
+cat > .env << EOF
+DATABASE_URL="$DATABASE_URL"
+DATABASE_URL_NON_POOLING="$DATABASE_URL_NON_POOLING"
+EOF
+echo "✅ Created .env file in apps/web" 
+cat .env
+
