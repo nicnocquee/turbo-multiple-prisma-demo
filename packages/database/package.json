@@ -5,6 +5,7 @@
     ".": "./src/client.ts"
   },
   "scripts": {
+    "create-env": "bash scripts/create-env.sh",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:deploy:safe": "tsx scripts/migrate-deploy-safe.ts",
     "db:migrate:dev": "prisma migrate dev",
