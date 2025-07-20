@@ -6,7 +6,7 @@
   },
   "scripts": {
     "db:migrate:deploy": "prisma migrate deploy",
-    "db:migrate:deploy:safe": "node -e \"if (!process.env.DATABASE_URL_NON_POOLING) { console.log('DATABASE_URL_NON_POOLING not found, using DATABASE_URL for directUrl'); process.env.DATABASE_URL_NON_POOLING = process.env.DATABASE_URL; }\" && prisma migrate deploy",
+    "db:migrate:deploy:safe": "tsx scripts/migrate-deploy-safe.ts",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx src/seed.ts",
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.0.0",
     "eslint": "^8.57.0",
     "prisma": "latest",
     "rimraf": "^5.0.5",
