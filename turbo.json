@@ -3,12 +3,10 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build", "generate"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "build:prod": {
       "dependsOn": ["^build", "generate", "db:migrate:deploy"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "db:migrate:dev": {
