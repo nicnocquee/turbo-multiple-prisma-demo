@@ -5,8 +5,7 @@
     ".": "./src/client.ts"
   },
   "scripts": {
-    "db:migrate:deploy": "prisma migrate deploy",
-    "db:migrate:deploy:safe": "tsx scripts/migrate-deploy-safe.ts",
+    "db:migrate:deploy": "cat .env && prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx src/seed.ts",

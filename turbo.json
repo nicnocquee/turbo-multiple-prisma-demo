@@ -7,7 +7,7 @@
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "build:prod": {
-      "dependsOn": ["^build", "generate", "db:migrate:deploy:safe"],
+      "dependsOn": ["^build", "generate", "db:migrate:deploy"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
@@ -16,9 +16,6 @@
       "persistent": true
     },
     "db:migrate:deploy": {
-      "cache": false
-    },
-    "db:migrate:deploy:safe": {
       "cache": false
     },
     "db:push": {
