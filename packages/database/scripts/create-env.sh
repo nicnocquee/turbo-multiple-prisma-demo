@@ -11,6 +11,8 @@ if [ -z "$DATABASE_URL_NON_POOLING" ]; then
     exit 1
 fi
 
+echo "pwd: $(pwd)"
+cd packages/database
 # Create .env file
 cat > .env << EOF
 DATABASE_URL="$DATABASE_URL"
@@ -18,3 +20,4 @@ DATABASE_URL_NON_POOLING="$DATABASE_URL_NON_POOLING"
 EOF
 
 echo "✅ Created .env file in packages/database" 
+cat .env
